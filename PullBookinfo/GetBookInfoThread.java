@@ -38,6 +38,7 @@ public class GetBookInfoThread extends Thread{
 
     @Override
     public void run() {
+        String encoding = "UTF-8";
         HttpGet getBookInfo = new HttpGet(webAddress);
         getBookInfo.addHeader(HttpHeaders.USER_AGENT, "Mozilla/5.0 (Windows NT 5.2) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.122 Safari/534.30");
         CloseableHttpResponse bookInfoResponse;
@@ -51,7 +52,6 @@ public class GetBookInfoThread extends Thread{
 
             bookInfoCode = EntityUtils.toString(bookInfoResponse.getEntity());
         } catch (IOException e) {
-            e.printStackTrace();
         }
 
         Matcher bookAuthorMatcher = bookAuthorRegex.matcher(bookInfoCode); //匹配作者

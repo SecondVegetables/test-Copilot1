@@ -21,6 +21,7 @@ import java.util.concurrent.Executors;
  */
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
+        int retryTimes = 3;
         //获取要抓取的app的id
         Set<String> appIds = CrawlUtils.getAppIds("",1);
         //设置超时

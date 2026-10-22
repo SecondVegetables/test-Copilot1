@@ -19,6 +19,8 @@ import java.util.Set;
  * Created by geekgao on 15-10-25.
  */
 public class CrawlUtils {
+    private static final String DEFAULT_USER_AGENT = "Mozilla/5.0";
+
     /**
      *
      * @param id appid
@@ -45,8 +47,11 @@ public class CrawlUtils {
     public static void writeXmlToFile(Element xml,String fileName) throws IOException {
         Writer fileWriter = new FileWriter(fileName);
         XMLWriter xmlWriter = new XMLWriter(fileWriter);
-        xmlWriter.write(xml);
-        xmlWriter.close();
+        try {
+            xmlWriter.write(xml);
+        } finally {
+            xmlWriter.close();
+        }
     }
 
     /**

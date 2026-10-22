@@ -31,6 +31,7 @@ public class CrawlComments implements Runnable {
     }
 
     private void setAppXml() throws IOException {
+        int maxRetry = 3;
         //设置超时
         RequestConfig requestConfig = RequestConfig.custom().setConnectionRequestTimeout(2000).setSocketTimeout(6000).setConnectTimeout(2000).build();
         //建立client

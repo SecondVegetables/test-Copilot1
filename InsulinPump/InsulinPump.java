@@ -30,6 +30,10 @@ class InsulinPump extends Thread{
         return insulinQuantity;
     }
 
+    public boolean isLowBattery() {
+        return battery < 20;
+    }
+
     public void setInsulinQuantity(double insulinQuantity) {
         this.insulinQuantity = insulinQuantity;
     }
@@ -52,6 +56,7 @@ class InsulinPump extends Thread{
 
     //调整胰岛素的量
     public double adjust() {
+        double unit = 2000;
         double quantity = (bloodSugar * 18 - 100) * weight * 6 / 2000;
         insulinQuantity -= quantity;
         return quantity;

@@ -23,6 +23,7 @@ public class GetAnswers {
     }
 
     private void getAllAnswer() {
+        int totalAnswers = 0;
         Set<String> categoryName = categoryLink.keySet();
         for (String name:categoryName) {
             if (name.equals("呼吸内科") || name.equals("内分泌科") || name.equals("肾内科") || name.equals("消化内科") || name.equals("血液科") || name.equals("风湿科")) {

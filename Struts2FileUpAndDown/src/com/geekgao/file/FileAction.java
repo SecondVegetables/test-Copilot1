@@ -35,20 +35,30 @@ public class FileAction extends ActionSupport {
     }
 
     public String upFile() throws IOException {
+        String uploadDir = "/home/geekgao/";
         if (file == null) {
             return INPUT;
         }
 
-        FileInputStream inFile = new FileInputStream(file);
-        FileOutputStream outFle = new FileOutputStream(new File("/home/geekgao/" + fileFileName));
-        byte[] b = new byte[8192];
-        int bLength;
+        FileInputStream inFile = null;
+        FileOutputStream outFle = null;
+        try {
+            inFile = new FileInputStream(file);
+            outFle = new FileOutputStream(new File("/home/geekgao/" + fileFileName));
+            byte[] b = new byte[8192];
+            int bLength;
 
-        while (-1 != (bLength = inFile.read(b))) {
-            outFle.write(b,0,bLength);
+            while (-1 != (bLength = inFile.read(b))) {
+                outFle.write(b,0,bLength);
+            }
+        } finally {
+            if (inFile != null) {
+                inFile.close();
+            }
+            if (outFle != null) {
+                outFle.close();
+            }
         }
-        inFile.close();
-        outFle.close();
         return SUCCESS;
     }
 
