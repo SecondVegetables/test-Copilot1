@@ -87,5 +87,6 @@ public class Main {
 
             CrawlUtils.writeXmlToFile(app,"/home/geekgao/comments/" + System.currentTimeMillis() + ".xml");
         }
+        client.close();
     }
 }
