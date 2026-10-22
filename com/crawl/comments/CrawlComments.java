@@ -31,6 +31,7 @@ public class CrawlComments implements Runnable {
     }
 
     private void setAppXml() throws IOException {
+        int maxRetry = 3;
         //设置超时
         RequestConfig requestConfig = RequestConfig.custom().setConnectionRequestTimeout(2000).setSocketTimeout(6000).setConnectTimeout(2000).build();
         //建立client
@@ -68,8 +69,6 @@ public class CrawlComments implements Runnable {
             System.err.println(appId + "号app从" + start + "开始的评论发生-ConnectionPoolTimeoutException");
             return;
         } catch (ClientProtocolException e) {
-            e.printStackTrace();
-            return;
         } catch (SocketTimeoutException e) {
             System.err.println(appId + "号app从" + start + "开始的评论发生-SocketTimeoutException");
             return;

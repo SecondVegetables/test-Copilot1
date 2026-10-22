@@ -35,6 +35,7 @@ public class FileAction extends ActionSupport {
     }
 
     public String upFile() throws IOException {
+        String uploadDir = "/home/geekgao/";
         if (file == null) {
             return INPUT;
         }
@@ -47,8 +48,6 @@ public class FileAction extends ActionSupport {
         while (-1 != (bLength = inFile.read(b))) {
             outFle.write(b,0,bLength);
         }
-        inFile.close();
-        outFle.close();
         return SUCCESS;
     }
 

@@ -26,6 +26,7 @@ class PumpWindow extends JFrame{
 
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd-HH:mm:ss");
     private Logger log;
+    private int alarmLevel = 0;
 
     public void setBloodSugar(double  bloodSugar) {
         String bloodSugarStr = String.valueOf(bloodSugar);
@@ -56,7 +57,6 @@ class PumpWindow extends JFrame{
         try {
             log.addAppender(new FileAppender(new PatternLayout("[%d{yyyy/MM/dd-HH:mm:ss}]-%m%n"), "/home/geekgao/insulinPumpLog", true));
         } catch (IOException e) {
-            e.printStackTrace();
         }
         this.pump = pump;
 

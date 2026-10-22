@@ -18,6 +18,7 @@ public class Main {
 
     CloseableHttpClient httpClient;
     static int bookId = 496;
+    String proxyHost = null;
     Map<String,Integer> proxyMap;//ip->端口
     List<String> ipList;//从这个list中读出ip，再由ip从map中读出端口
     int i = 0;//根据这个从list中取出ip，换上对应的代理
@@ -146,7 +147,6 @@ public class Main {
                     try {
                         thread.join();
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
                     }
                 }
                 nowPageNum++;

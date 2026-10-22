@@ -6,6 +6,7 @@ public class MicroWave extends Thread{
     private int minutes;//分钟数
     private int second;//秒数
     private boolean isRun;//是否正在运行
+    private boolean beepEnabled;//蜂鸣开关
 
     public MicroWave() {
         hour = 0;
@@ -22,7 +23,7 @@ public class MicroWave extends Thread{
             public void run() {
 
                 //如果正在运行就改变时间
-                if (isRun) {
+                if (isRun == true) {
                     if (second >= 1) {
                         second--;
                     } else {

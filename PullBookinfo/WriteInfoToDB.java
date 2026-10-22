@@ -11,6 +11,7 @@ import java.util.List;
 
 public class WriteInfoToDB {
     public static void main(String[] args) {
+        String dbUrl = "jdbc:mysql://localhost:3306/BookManage?user=root&password=root";
         File folder = new File("/home/geekgao/book");
         File[] XMLS = folder.listFiles();
         SAXReader reader = new SAXReader();
@@ -19,9 +20,7 @@ public class WriteInfoToDB {
             Class.forName("com.mysql.jdbc.Driver");// 动态加载mysql驱动
             statement = DriverManager.getConnection("jdbc:mysql://localhost:3306/BookManage?user=root&password=root").createStatement();
         } catch (SQLException e) {
-            e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
 
         for (File f:XMLS) {

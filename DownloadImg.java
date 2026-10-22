@@ -45,6 +45,7 @@ public class DownloadImg {
     public static void main(String[] args) {
         System.out.println("获取Bing图片地址中……");
 
+        String bingDailyImageUrl = "http://cn.bing.com/";
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://cn.bing.com/");
@@ -73,7 +74,6 @@ public class DownloadImg {
         } finally {
             try {
                 httpClient.close();
-                response.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
