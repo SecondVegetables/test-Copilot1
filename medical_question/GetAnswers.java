@@ -70,7 +70,7 @@ public class GetAnswers {
                         Document answerDom = Jsoup.connect(answerAddress).userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 QIHU 360EE").timeout(5000).get();
                         String type = name;
                         String title = answerDom.title();
-                        String answerNum = answerDom.select("#wgt-answers").select(".hd").select("h2").text();
+                        String answerNum = answerDom.select("#wgt-answers").select(".hd").select("h2").text().split("条")[0];
 
                         org.dom4j.Document document = DocumentHelper.createDocument();//这个问题的dom树
                         answerDom4jDocument.put(title,document);
