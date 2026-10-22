@@ -47,7 +47,11 @@ public class CrawlUtils {
     public static void writeXmlToFile(Element xml,String fileName) throws IOException {
         Writer fileWriter = new FileWriter(fileName);
         XMLWriter xmlWriter = new XMLWriter(fileWriter);
-        xmlWriter.write(xml);
+        try {
+            xmlWriter.write(xml);
+        } finally {
+            xmlWriter.close();
+        }
     }
 
     /**
