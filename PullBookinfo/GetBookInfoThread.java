@@ -52,6 +52,9 @@ public class GetBookInfoThread extends Thread{
 
             bookInfoCode = EntityUtils.toString(bookInfoResponse.getEntity());
         } catch (IOException e) {
+            System.out.println("获取书本具体信息时出错,页面地址:" + webAddress + "错误信息" + e.getMessage());
+            e.printStackTrace();
+            return;
         }
 
         Matcher bookAuthorMatcher = bookAuthorRegex.matcher(bookInfoCode); //匹配作者
