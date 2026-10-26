@@ -20,7 +20,11 @@ public class WriteInfoToDB {
             Class.forName("com.mysql.jdbc.Driver");// 动态加载mysql驱动
             statement = DriverManager.getConnection("jdbc:mysql://localhost:3306/BookManage?user=root&password=root").createStatement();
         } catch (SQLException e) {
+            System.err.println("数据库连接初始化失败: " + e.getMessage());
+            return;
         } catch (ClassNotFoundException e) {
+            System.err.println("JDBC驱动加载失败: " + e.getMessage());
+            return;
         }
 
         for (File f:XMLS) {
