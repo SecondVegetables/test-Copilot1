@@ -40,23 +40,13 @@ public class FileAction extends ActionSupport {
             return INPUT;
         }
 
-        FileInputStream inFile = null;
-        FileOutputStream outFle = null;
-        try {
-            inFile = new FileInputStream(file);
-            outFle = new FileOutputStream(new File("/home/geekgao/" + fileFileName));
+        try (FileInputStream inFile = new FileInputStream(file);
+             FileOutputStream outFle = new FileOutputStream(new File("/home/geekgao/" + fileFileName))) {
             byte[] b = new byte[8192];
             int bLength;
 
             while (-1 != (bLength = inFile.read(b))) {
                 outFle.write(b,0,bLength);
-            }
-        } finally {
-            if (inFile != null) {
-                inFile.close();
-            }
-            if (outFle != null) {
-                outFle.close();
             }
         }
         return SUCCESS;
