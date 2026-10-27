@@ -99,6 +99,7 @@ public class EmotionJudge {
     }
 
     public void calc() {
+        System.out.println("开始情感判断");
         articleWordMap = new HashMap<String, Integer>();
 
         //读取文章

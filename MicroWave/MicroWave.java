@@ -20,6 +20,7 @@ public class MicroWave extends Thread{
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
+                System.out.println("当前时间:" + hour + ":" + minutes + ":" + second);
 
                 //如果正在运行就改变时间
                 if (isRun) {

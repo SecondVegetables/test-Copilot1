@@ -64,17 +64,8 @@ public class CrawlComments implements Runnable {
     public void run() {
         try {
             setAppXml();
-        } catch (ConnectionPoolTimeoutException e) {
-            System.err.println(appId + "号app从" + start + "开始的评论发生-ConnectionPoolTimeoutException");
-            return;
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-            return;
-        } catch (SocketTimeoutException e) {
-            System.err.println(appId + "号app从" + start + "开始的评论发生-SocketTimeoutException");
-            return;
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println(appId + "号app从" + start + "开始的评论抓取失败:" + e.getMessage());
             return;
         }
         System.out.println(appId + "号app从" + start + "开始的评论抓取完毕");

@@ -33,6 +33,7 @@ public class GuideUtil {
      * ∂¡»ÎÕº∆¨
      */
     public static Image getImage(String path) {
+        System.out.println("load image: " + path);
         URL u = GuideUtil.class.getClassLoader().getResource(path);
         BufferedImage img = null;
 

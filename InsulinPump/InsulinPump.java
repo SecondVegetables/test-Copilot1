@@ -52,6 +52,7 @@ class InsulinPump extends Thread{
 
     //调整胰岛素的量
     public double adjust() {
+        System.out.println("调整胰岛素量,当前血糖:" + bloodSugar);
         double quantity = (bloodSugar * 18 - 100) * weight * 6 / 2000;
         insulinQuantity -= quantity;
         return quantity;

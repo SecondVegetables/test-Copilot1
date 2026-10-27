@@ -74,6 +74,7 @@ public class PumpMain {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
+                System.out.println("更新胰岛素泵显示");
                 insulinPump.setBloodSugar(people.getBloodSugar());
 
                 pumpWindow.updateTime();

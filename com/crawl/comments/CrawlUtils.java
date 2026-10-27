@@ -25,6 +25,7 @@ public class CrawlUtils {
      * @return app名字
      */
     public static String getAppName(String id) throws IOException {
+        System.out.println("正在获取应用名称,id=" + id);
         CloseableHttpClient client = HttpClients.createDefault();
 
         HttpGet get = new HttpGet("http://zhushou.360.cn/detail/index/soft_id/" + id);

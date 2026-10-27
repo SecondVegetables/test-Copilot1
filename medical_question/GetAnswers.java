@@ -36,6 +36,7 @@ public class GetAnswers {
             int allPageCount = 0;//记录总共需要抓取的网页页数
 
             try {
+                System.out.println("获取类别[" + name + "]的页数");
                 Document tempDom = Jsoup.connect(webAddress).userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 QIHU 360EE").timeout(5000).get();
                 allPageCount = Integer.parseInt(tempDom.select(".pager-last").attr("href").split("=")[1].split("#")[0])/25 + 1;
             } catch (IOException e) {

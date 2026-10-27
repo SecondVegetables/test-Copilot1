@@ -101,6 +101,7 @@ public class Main {
 
         //分别抓取每一种类别的书籍
         for (String tag:tagList) {
+            System.out.println("开始抓取类别[" + tag + "]的图书");
             int nowPageNum = 0;//目前正在抓取的页数
             Document newDocument = DocumentHelper.createDocument();
             Element rootElement = newDocument.addElement("root");

@@ -130,6 +130,7 @@ public class CalcWeightAndDoc {
 
     //参数是生成的xml文件的路径与名字
     public void calcWeight(String resultPath) {
+        System.out.println("开始计算词语权重");
         positiveWord = new HashMap<String, Integer>();
         negativeWord = new HashMap<String, Integer>();
         unsureWord = new HashMap<String, Integer>();
