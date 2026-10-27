@@ -1,0 +1,19 @@
+西邮导游系统源码/源码/org/geekgao/guide/Vertex.java
+  s_6cdebd4d8737ea::t_c8d7826a336e49 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.6",
+  "base_commit_sha": "5c59b5f45a37879220da12a60c07532247f980d6",
+  "prompts": {},
+  "sessions": {
+    "s_6cdebd4d8737ea": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e850e1644ffe7IdadRYQq8rXeQ",
+        "model": "unknown"
+      },
+      "human_author": "xiehangchen 00693116 <xiehangchen@huawei.com>"
+    }
+  }
+}
