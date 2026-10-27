@@ -10,6 +10,7 @@ public class Utils {
     static {
         try {
             config.load(Utils.class.getResourceAsStream("/config.properties"));
+            System.out.println("加载配置文件成功");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -38,6 +38,7 @@ public class GetBookInfoThread extends Thread{
 
     @Override
     public void run() {
+        System.out.println("开始抓取书籍信息:" + webAddress);
         HttpGet getBookInfo = new HttpGet(webAddress);
         getBookInfo.addHeader(HttpHeaders.USER_AGENT, "Mozilla/5.0 (Windows NT 5.2) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.122 Safari/534.30");
         CloseableHttpResponse bookInfoResponse;

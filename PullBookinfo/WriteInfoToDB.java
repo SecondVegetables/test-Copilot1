@@ -11,6 +11,7 @@ import java.util.List;
 
 public class WriteInfoToDB {
     public static void main(String[] args) {
+        System.out.println("开始将书籍信息写入数据库");
         File folder = new File("/home/geekgao/book");
         File[] XMLS = folder.listFiles();
         SAXReader reader = new SAXReader();

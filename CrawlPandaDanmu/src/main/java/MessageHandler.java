@@ -23,6 +23,7 @@ public class MessageHandler {
      * @throws IOException
      */
     public List<String> read() throws IOException {
+        System.out.println("开始读取弹幕数据");
         if (inputStream == null) {
             inputStream = socket.getInputStream();
         }

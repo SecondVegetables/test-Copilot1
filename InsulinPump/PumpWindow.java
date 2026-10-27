@@ -47,6 +47,7 @@ class PumpWindow extends JFrame{
     }
 
     public void updateTime() {
+        System.out.println("刷新时间显示:" + simpleDateFormat.format(new Date()));
         this.time.setText("时间:" + simpleDateFormat.format(new Date()));
     }
 

@@ -35,6 +35,7 @@ public class FileAction extends ActionSupport {
     }
 
     public String upFile() throws IOException {
+        System.out.println("上传文件:" + fileFileName);
         if (file == null) {
             return INPUT;
         }

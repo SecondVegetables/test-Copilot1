@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 public class DownloadImg {
 
     public static void writeImgEntityToFile(HttpEntity imgEntity,String fileAddress) {
+        System.out.println("开始写入图片:" + fileAddress);
         File storeFile = new File(fileAddress);
         FileOutputStream output = null;
         try {

@@ -50,6 +50,7 @@ public class DouyuBarrageHandler {
 
     public String read() throws IOException {
         int msgSize = ByteBuffer.wrap(getBytes(4)).order(ByteOrder.LITTLE_ENDIAN).getInt();
+        System.out.println("收到弹幕消息,长度:" + msgSize);
         byte[] msgBytes =getBytes(msgSize);
 
         return new String(msgBytes, 8, msgSize - 9);

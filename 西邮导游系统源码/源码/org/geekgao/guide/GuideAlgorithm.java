@@ -28,6 +28,7 @@ public class GuideAlgorithm {
 	 * @return
 	 */
 	public static Integer[] Dijkstra(int start,int end,int count,Map<Integer,Vertex> map) {
+		System.out.println("Dijkstra: start=" + start + ", end=" + end);
 		if (start == end) {
 			return null;
 		}

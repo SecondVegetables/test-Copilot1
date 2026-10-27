@@ -8,6 +8,7 @@ import java.io.Writer;
 public class WriteBookInfoToFile extends Thread {
     private Element root;
     private String fileAddress;
+    private String encoding = "UTF-8";
 
     public WriteBookInfoToFile(Element root,String fileAddress) {
         this.root = root;

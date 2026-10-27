@@ -4,6 +4,7 @@ import java.util.TimerTask;
 public class MicroWaveMain {
     public static void main(String[] args) {
         final MicroWave microWave = new MicroWave();
+        System.out.println("微波炉仿真程序启动");
         final MicroWaveWindow microWaveWindow = new MicroWaveWindow(microWave);
 
         microWave.run();

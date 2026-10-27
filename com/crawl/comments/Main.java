@@ -29,6 +29,7 @@ public class Main {
         CloseableHttpClient client = HttpClients.custom().setDefaultRequestConfig(requestConfig).build();
 
         for (String id:appIds) {
+            System.out.println("开始抓取appid:" + id + "的评论");
             //建立线程池
             ExecutorService executorService = Executors.newFixedThreadPool(30);
             //建立xml根节点

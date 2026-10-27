@@ -27,6 +27,7 @@ public class Main {
         HttpGet getHomePage = new HttpGet("http://www.zhihu.com/");
         try {
             //填充登陆请求中基本的参数
+            System.out.println("获取知乎首页中...");
             CloseableHttpResponse response = httpClient.execute(getHomePage);
             String responseHtml = EntityUtils.toString(response.getEntity());
             String xsrfValue = responseHtml.split("<input type=\"hidden\" name=\"_xsrf\" value=\"")[1].split("\"/>")[0];
