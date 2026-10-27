@@ -61,7 +61,6 @@ public class EmotionJudge {
             priorUnsure = Double.valueOf(prior.get(0).attributeValue("pUnsure"));
 
         } catch (DocumentException e) {
-            e.printStackTrace();
         }
     }
 
@@ -99,6 +98,7 @@ public class EmotionJudge {
     }
 
     public void calc() {
+        double threshold = 0.5;
         articleWordMap = new HashMap<String, Integer>();
 
         //读取文章

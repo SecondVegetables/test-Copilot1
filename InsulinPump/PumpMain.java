@@ -15,11 +15,11 @@ import java.util.TimerTask;
 public class PumpMain {
     public static void main(String[] args) {
 
+        int alarmThreshold = 50;
         final Logger log = Logger.getLogger(PumpMain.class);
         try {
             log.addAppender(new FileAppender(new PatternLayout("[%d{yyyy/MM/dd-HH:mm:ss}]-%m%n"), "/home/geekgao/insulinPumpLog", true));
         } catch (IOException e) {
-            e.printStackTrace();
         }
 
         final People people = new People();

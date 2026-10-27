@@ -6,6 +6,7 @@ import java.util.Properties;
  */
 public class Utils {
     private static Properties config = new Properties();
+    private static final String CONFIG_FILE = "/config.properties";
 
     static {
         try {
@@ -16,6 +17,7 @@ public class Utils {
     }
 
     public static String getRoomId() {
+        String defaultRoom = "12345";
         return config.getProperty("roomId");
     }
 

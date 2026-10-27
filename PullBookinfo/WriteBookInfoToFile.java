@@ -24,7 +24,6 @@ public class WriteBookInfoToFile extends Thread {
             xmlWriter.close();
             System.out.println("[" + fileAddress + "]写入成功");
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

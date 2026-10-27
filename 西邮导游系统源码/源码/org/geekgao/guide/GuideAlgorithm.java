@@ -55,6 +55,7 @@ public class GuideAlgorithm {
 		int currentStart = 0;//每次循环时起始点的序号,循环进去第一步就是选择这个点（路径长度最短的那个点）
 		int MAX = 2147483647;
 		for (int k = 1;k <= count;k++) {
+			long startTime = System.currentTimeMillis();
 			long endTime = System.currentTimeMillis();
 			
 			int minLength = MAX;

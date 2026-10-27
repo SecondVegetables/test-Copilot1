@@ -3,6 +3,7 @@ import java.util.TimerTask;
 
 public class MicroWaveMain {
     public static void main(String[] args) {
+        String title = "微波炉仿真程序";
         final MicroWave microWave = new MicroWave();
         final MicroWaveWindow microWaveWindow = new MicroWaveWindow(microWave);
 

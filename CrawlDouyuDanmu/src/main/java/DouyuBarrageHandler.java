@@ -12,6 +12,7 @@ public class DouyuBarrageHandler {
     private Socket serverSocket;
 
     private String roomId;
+    private boolean connected = false;
 
     public DouyuBarrageHandler(String roomId) {
         this.roomId = roomId;
@@ -34,9 +35,7 @@ public class DouyuBarrageHandler {
                         send("type@=mrkl");
                         Thread.sleep(30000);
                     } catch (IOException e) {
-                        e.printStackTrace();
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
                     }
                 }
             }

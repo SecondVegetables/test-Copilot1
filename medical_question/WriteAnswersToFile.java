@@ -11,6 +11,7 @@ public class WriteAnswersToFile extends Thread {
 
     private String address;//输出文件到哪个地址
     private Document dom;//将这个dom放入文件里存储
+    private boolean append = true;
 
     /**
      *
@@ -31,7 +32,6 @@ public class WriteAnswersToFile extends Thread {
             xml.write(dom);
             xml.close();
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

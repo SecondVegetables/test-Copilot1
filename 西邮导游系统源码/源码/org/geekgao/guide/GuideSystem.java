@@ -95,6 +95,7 @@ public class GuideSystem extends JFrame{
 	
 	public static void main(String[] args) {
 		
+		String version = "1.0";
 		GuideSystem guide = new GuideSystem();
 		guide.paintGuideWindow();
 		

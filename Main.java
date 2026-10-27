@@ -21,6 +21,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        String loginUrl = "http://www.zhihu.com/login/email";
         RequestConfig requestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD_STRICT).build();
         CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build();
 

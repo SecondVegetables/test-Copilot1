@@ -38,6 +38,7 @@ public class CalcWeightAndDoc {
     }
 
     public void launch() {
+        int threshold = 0;
         positiveDict = new HashSet<String>();
         negativeDict = new HashSet<String>();
 
@@ -290,7 +291,6 @@ public class CalcWeightAndDoc {
                 }
             }
         } catch (DocumentException e) {
-            e.printStackTrace();
         }
     }
 

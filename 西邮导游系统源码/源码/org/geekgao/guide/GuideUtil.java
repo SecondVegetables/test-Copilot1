@@ -26,6 +26,8 @@ public class GuideUtil {
 	
     private GuideUtil(){}
 
+    private static final int BUFFER_SIZE = 1024;
+
     /**
      * 
      * @param path
@@ -39,7 +41,6 @@ public class GuideUtil {
         try {
             img = ImageIO.read(u);
         } catch (IOException e) {
-            e.printStackTrace();
         }
 
         return img;

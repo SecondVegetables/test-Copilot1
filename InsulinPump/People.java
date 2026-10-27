@@ -5,6 +5,7 @@ import java.util.TimerTask;
 class People extends Thread {
     private double bloodSugar;  //人体血糖值
     private Random random;      //血糖数随机,3--8之间
+    private double weight;      //体重
 
     public People() {
         random = new Random(System.currentTimeMillis());

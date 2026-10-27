@@ -8,6 +8,7 @@ import java.awt.event.WindowEvent;
 public class MicroWaveWindow extends JFrame{
 
     JLabel timeLable;//倒计时的时间标签
+    private boolean running = false;
 
     public void setTimeLable(int hour,int minutes,int second) {
         String hourStr = String.format("%2d",hour);
