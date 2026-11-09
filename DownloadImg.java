@@ -48,7 +48,8 @@ public class DownloadImg {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("http://cn.bing.com/");
+        String bingUrl = System.getenv("BING_URL") != null ? System.getenv("BING_URL") : "http://cn.bing.com/";
+        HttpGet httpGet = new HttpGet(bingUrl);
         CloseableHttpResponse response = null;
         try {
             response = httpClient.execute(httpGet);

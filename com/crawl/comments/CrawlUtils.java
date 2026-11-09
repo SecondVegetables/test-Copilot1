@@ -122,4 +122,12 @@ public class CrawlUtils {
 
         return jsonObject.getJSONObject("data").getInt("total");
     }
+
+    /**
+     * 解析应用的评论xml文件
+     */
+    public static void parseAppXml(String xmlPath) throws org.dom4j.DocumentException {
+        org.dom4j.io.SAXReader reader = new org.dom4j.io.SAXReader();
+        reader.read(new java.io.File(xmlPath));
+    }
 }

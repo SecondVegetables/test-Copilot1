@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 public class DouyuBarrageHandler {
-    private static String host = "openbarrage.douyutv.com";
+    private static String host = System.getenv("DOUYU_HOST") != null ? System.getenv("DOUYU_HOST") : "openbarrage.douyutv.com";
 
     private static int port = 8601;
 

@@ -65,7 +65,8 @@ public class WriteInfoToDB {
                     }
 //                    System.out.println(info.getName() + ": " + info.getText());
                 }
-                String sql = "INSERT INTO Book(bookPublish,bookName,bookAuthor,bookTag,bookIsbn,bookCount,bookRestCount,bookLink,bookImg) VALUES ('" + publish + "','" + name + "','" + author + "','" + f.getName().split("\\.")[0] + "','" + isbn + "','" + count + "','" + count + "','" + link + "','" + img + "');";
+                String bookTag = System.getenv("BOOK_TAG") != null ? System.getenv("BOOK_TAG") : f.getName().split("\\.")[0];
+                String sql = "INSERT INTO Book(bookPublish,bookName,bookAuthor,bookTag,bookIsbn,bookCount,bookRestCount,bookLink,bookImg) VALUES ('" + publish + "','" + name + "','" + author + "','" + bookTag + "','" + isbn + "','" + count + "','" + count + "','" + link + "','" + img + "');";
                 try {
                     statement.execute(sql);
                 } catch (SQLException e) {

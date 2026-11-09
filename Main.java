@@ -49,7 +49,8 @@ public class Main {
                 out.write(bytes,0,len);
             }
             out.close();
-            Runtime.getRuntime().exec("eog /tmp/zhihu.gif");//ubuntu下看图片的命令是eog
+            String viewer = System.getenv("IMG_VIEWER");
+            Runtime.getRuntime().exec(viewer + " /tmp/zhihu.gif");//ubuntu下看图片的命令是eog
 
             //请用户输入验证码
             System.out.print("请输入验证码：");
