@@ -1,0 +1,19 @@
+.idea/workspace.xml
+  s_860c63f47a68f1::t_74a8f432d54e13 3-5,97-101,105-107,112-114,116,121-123
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.6",
+  "base_commit_sha": "15a43c9136ba4933ba3b332b02c6521f919f6790",
+  "prompts": {},
+  "sessions": {
+    "s_860c63f47a68f1": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e9d179966ffeePgmo9LYgzm4Gk",
+        "model": "unknown"
+      },
+      "human_author": "xiehangchen 00693116 <xiehangchen@huawei.com>"
+    }
+  }
+}
