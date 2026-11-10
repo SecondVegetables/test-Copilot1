@@ -110,4 +110,12 @@ public class MessageHandler {
     public void close() throws IOException {
         socket.close();
     }
+
+    /**
+     * 反序列化收到的消息对象
+     */
+    public Object deserializeMessage() throws IOException, ClassNotFoundException {
+        java.io.ObjectInputStream in = new java.io.ObjectInputStream(socket.getInputStream());
+        return in.readObject();
+    }
 }

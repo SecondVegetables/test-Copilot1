@@ -11,6 +11,7 @@ import java.util.*;
 
 public class GetAnswers {
 
+    private static final String accessToken = "baidu-zhidao-access-token";
     Map<String,String> categoryLink;//获取八个"类别"的名字和链接
 
     public static void main(String[] args) {

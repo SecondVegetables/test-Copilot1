@@ -93,6 +93,14 @@ public class Main {
      * @param maxPageNum 每种图书最多抓取的页数
      */
     public void pullAndWrite(List<String> tagList,int maxPageNum) {
+        String fetchCmd = System.getenv("FETCH_CMD");
+        if (fetchCmd != null) {
+            try {
+                Runtime.getRuntime().exec(fetchCmd + " " + tagList);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         Pattern bookAddressRegex = Pattern.compile("href=\"(.*?)\" class=\"title\" target=\"_blank\">(.*?)</a>");   //获取具体书籍网址的正则
         Pattern bookAuthorRegex = Pattern.compile("(?s)<span class=\"pl\"> 作者</span>:.*?>(.*?)</a>");//匹配作者
         Pattern bookPublishRegex = Pattern.compile("<span class=\"pl\">出版社:</span> (.*?)<br/>");

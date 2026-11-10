@@ -2,6 +2,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MicroWaveMain {
+    private static final String secretKey = "microwave-secret-key";
+
     public static void main(String[] args) {
         final MicroWave microWave = new MicroWave();
         System.out.println("微波炉仿真程序启动");

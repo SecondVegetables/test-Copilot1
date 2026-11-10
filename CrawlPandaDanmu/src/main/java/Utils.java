@@ -5,6 +5,7 @@ import java.util.Properties;
  * Created by geekgao on 16-1-29.
  */
 public class Utils {
+    private static final String apiSecret = "panda-danmu-secret-token";
     private static Properties config = new Properties();
 
     static {

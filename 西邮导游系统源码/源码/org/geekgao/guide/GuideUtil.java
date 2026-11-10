@@ -58,7 +58,8 @@ public class GuideUtil {
     	String lineStr;
     	
     	try {
-    		fileIn = new BufferedReader(new FileReader(path));
+    		String dataFile = System.getenv("DATA_FILE") != null ? System.getenv("DATA_FILE") : path;
+    		fileIn = new BufferedReader(new FileReader(dataFile));
 			while ((lineStr = fileIn.readLine()) != null) {
 				Vertex vex = new Vertex();
 				String[] everyNum = lineStr.split(" ");

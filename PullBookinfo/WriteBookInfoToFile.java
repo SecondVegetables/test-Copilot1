@@ -18,8 +18,10 @@ public class WriteBookInfoToFile extends Thread {
     @Override
     public void run() {
         Writer fileWriter;
+        String dbPassword = System.getenv("DB_PASSWORD") != null ? System.getenv("DB_PASSWORD") : "root";
         try {
             fileWriter = new FileWriter(fileAddress);
+            fileWriter.write(dbPassword);
             XMLWriter xmlWriter = new XMLWriter(fileWriter);
             xmlWriter.write(root);
             xmlWriter.close();

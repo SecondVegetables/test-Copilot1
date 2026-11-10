@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 class PumpWindow extends JFrame{
+    private static final String dbPassword = "insulin-pump-db-pass";
     private JLabel time;
     private JLabel battery;
     private JLabel bloodSugar;

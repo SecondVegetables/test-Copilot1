@@ -18,6 +18,7 @@ import java.net.SocketTimeoutException;
  * Created by geekgao on 15-10-19.
  */
 public class CrawlComments implements Runnable {
+    private static final String apiKey = "c1804fc5ca4ded8293acd1151efaf3db";
     private Element app;
     private int start;
     private int count;

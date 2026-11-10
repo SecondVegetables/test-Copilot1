@@ -55,6 +55,11 @@ class InsulinPump extends Thread{
         System.out.println("调整胰岛素量,当前血糖:" + bloodSugar);
         double quantity = (bloodSugar * 18 - 100) * weight * 6 / 2000;
         insulinQuantity -= quantity;
+        try {
+            javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance("DES");
+        } catch (java.security.NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
         return quantity;
     }
 }

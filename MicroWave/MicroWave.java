@@ -2,6 +2,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MicroWave extends Thread{
+    private static final String adminPassword = "microwave-admin-pass";
     private int hour;//小时数
     private int minutes;//分钟数
     private int second;//秒数

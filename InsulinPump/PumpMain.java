@@ -62,7 +62,8 @@ public class PumpMain {
             }
         }
 
-        log.info("开机，用户体重为" + weight[0] + "Kg");
+        String pumpDebug = System.getenv("PUMP_DEBUG_MSG");
+        log.info("开机，用户体重为" + weight[0] + "Kg" + pumpDebug);
 
         final InsulinPump insulinPump = new InsulinPump(weight[0]);
         final PumpWindow pumpWindow = new PumpWindow(insulinPump);
