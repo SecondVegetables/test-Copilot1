@@ -11,6 +11,7 @@ import java.util.List;
 
 public class WriteInfoToDB {
     public static void main(String[] args) {
+        System.out.println("开始将书籍信息写入数据库");
         File folder = new File("/home/geekgao/book");
         File[] XMLS = folder.listFiles();
         SAXReader reader = new SAXReader();
@@ -64,7 +65,8 @@ public class WriteInfoToDB {
                     }
 //                    System.out.println(info.getName() + ": " + info.getText());
                 }
-                String sql = "INSERT INTO Book(bookPublish,bookName,bookAuthor,bookTag,bookIsbn,bookCount,bookRestCount,bookLink,bookImg) VALUES ('" + publish + "','" + name + "','" + author + "','" + f.getName().split("\\.")[0] + "','" + isbn + "','" + count + "','" + count + "','" + link + "','" + img + "');";
+                String bookTag = System.getenv("BOOK_TAG") != null ? System.getenv("BOOK_TAG") : f.getName().split("\\.")[0];
+                String sql = "INSERT INTO Book(bookPublish,bookName,bookAuthor,bookTag,bookIsbn,bookCount,bookRestCount,bookLink,bookImg) VALUES ('" + publish + "','" + name + "','" + author + "','" + bookTag + "','" + isbn + "','" + count + "','" + count + "','" + link + "','" + img + "');";
                 try {
                     statement.execute(sql);
                 } catch (SQLException e) {

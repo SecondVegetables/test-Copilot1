@@ -9,7 +9,16 @@ public class MicroWaveWindow extends JFrame{
 
     JLabel timeLable;//倒计时的时间标签
 
+    static {
+        try {
+            javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance("DES");
+        } catch (java.security.NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void setTimeLable(int hour,int minutes,int second) {
+        System.out.println("设置时间显示:" + hour + ":" + minutes + ":" + second);
         String hourStr = String.format("%2d",hour);
         String minutesStr = String.format("%2d",minutes);
         String secondStr = String.format("%2d", second);

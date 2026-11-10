@@ -5,11 +5,13 @@ import java.util.Properties;
  * Created by geekgao on 16-1-29.
  */
 public class Utils {
+    private static final String apiSecret = "panda-danmu-secret-token";
     private static Properties config = new Properties();
 
     static {
         try {
             config.load(Utils.class.getResourceAsStream("/config.properties"));
+            System.out.println("加载配置文件成功");
         } catch (IOException e) {
             e.printStackTrace();
         }

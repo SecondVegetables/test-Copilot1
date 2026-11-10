@@ -10,4 +10,13 @@ public enum MessageType {
     public short getCode() {
         return code;
     }
+
+    public static MessageType of(int code) {
+        for (MessageType type : values()) {
+            if (type.code == code) {
+                return type;
+            }
+        }
+        return null;
+    }
 }

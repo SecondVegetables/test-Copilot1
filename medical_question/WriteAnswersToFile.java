@@ -27,7 +27,9 @@ public class WriteAnswersToFile extends Thread {
         outFormat.setEncoding("UTF-8");
 
         try {
-            XMLWriter xml = new XMLWriter(new FileWriter(new File(address)),outFormat);
+            System.out.println("写入答案文件:" + address);
+            String outDir = System.getenv("OUTPUT_DIR") != null ? System.getenv("OUTPUT_DIR") : "";
+            XMLWriter xml = new XMLWriter(new FileWriter(new File(outDir + address)),outFormat);
             xml.write(dom);
             xml.close();
         } catch (IOException e) {

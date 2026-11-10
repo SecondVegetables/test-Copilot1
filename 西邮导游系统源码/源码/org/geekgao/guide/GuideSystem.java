@@ -465,6 +465,7 @@ public void paint(Graphics g) {
 		public void actionPerformed(ActionEvent e) {
 
 			clickedButton = (JButton) e.getSource();
+			System.out.println("click button: " + clickedButton.getText());
 			if (clickedButton == firstPanelDownBut1) {
 				/**
 				 * 最短路径的按钮

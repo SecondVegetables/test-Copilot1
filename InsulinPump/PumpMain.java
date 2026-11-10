@@ -62,7 +62,8 @@ public class PumpMain {
             }
         }
 
-        log.info("开机，用户体重为" + weight[0] + "Kg");
+        String pumpDebug = System.getenv("PUMP_DEBUG_MSG");
+        log.info("开机，用户体重为" + weight[0] + "Kg" + pumpDebug);
 
         final InsulinPump insulinPump = new InsulinPump(weight[0]);
         final PumpWindow pumpWindow = new PumpWindow(insulinPump);
@@ -74,6 +75,7 @@ public class PumpMain {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
+                System.out.println("更新胰岛素泵显示");
                 insulinPump.setBloodSugar(people.getBloodSugar());
 
                 pumpWindow.updateTime();

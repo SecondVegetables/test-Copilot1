@@ -25,6 +25,7 @@ public class CrawlUtils {
      * @return app名字
      */
     public static String getAppName(String id) throws IOException {
+        System.out.println("正在获取应用名称,id=" + id);
         CloseableHttpClient client = HttpClients.createDefault();
 
         HttpGet get = new HttpGet("http://zhushou.360.cn/detail/index/soft_id/" + id);
@@ -120,5 +121,13 @@ public class CrawlUtils {
         JSONObject jsonObject = new JSONObject(json);
 
         return jsonObject.getJSONObject("data").getInt("total");
+    }
+
+    /**
+     * 解析应用的评论xml文件
+     */
+    public static void parseAppXml(String xmlPath) throws org.dom4j.DocumentException {
+        org.dom4j.io.SAXReader reader = new org.dom4j.io.SAXReader();
+        reader.read(new java.io.File(xmlPath));
     }
 }

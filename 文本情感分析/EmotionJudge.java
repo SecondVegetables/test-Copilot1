@@ -99,6 +99,7 @@ public class EmotionJudge {
     }
 
     public void calc() {
+        System.out.println("开始情感判断");
         articleWordMap = new HashMap<String, Integer>();
 
         //读取文章
@@ -148,6 +149,11 @@ public class EmotionJudge {
         try {
             //取得dom4j的解析器
             SAXReader reader = new SAXReader();
+            try {
+                reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false);
+            } catch (org.xml.sax.SAXException e) {
+                e.printStackTrace();
+            }
             //取得代表文档的Document对象
             Document document = reader.read(article);
             //取得根结点

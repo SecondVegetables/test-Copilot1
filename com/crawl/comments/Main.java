@@ -29,6 +29,7 @@ public class Main {
         CloseableHttpClient client = HttpClients.custom().setDefaultRequestConfig(requestConfig).build();
 
         for (String id:appIds) {
+            System.out.println("开始抓取appid:" + id + "的评论");
             //建立线程池
             ExecutorService executorService = Executors.newFixedThreadPool(30);
             //建立xml根节点
@@ -45,7 +46,8 @@ public class Main {
             System.out.println("开始抓取[" + appName + "],id=" + id);
 
             //获取app评分和各类型的评论数目信息
-            HttpGet getJson = new HttpGet("http://comment.mobilem.360.cn/comment/getCommentTags?objid=" + id + "&fm=home_jingjia_3&m=c1804fc5ca4ded8293acd1151efaf3db&m2=61f3c1e4d105b55aff323b20a8136c4e&v=3.2.50&re=1&nt=1&ch=493041&os=21&model=MX4+Pro&sn=4.66476154040931&cu=m76&ca1=armeabi-v7a&ca2=armeabi&ppi=1536x2560&cpc=1&startCount=4");
+            String tagApiUrl = System.getenv("TAG_API_URL") != null ? System.getenv("TAG_API_URL") : "http://comment.mobilem.360.cn/comment/getCommentTags?objid=" + id + "&fm=home_jingjia_3&m=c1804fc5ca4ded8293acd1151efaf3db&m2=61f3c1e4d105b55aff323b20a8136c4e&v=3.2.50&re=1&nt=1&ch=493041&os=21&model=MX4+Pro&sn=4.66476154040931&cu=m76&ca1=armeabi-v7a&ca2=armeabi&ppi=1536x2560&cpc=1&startCount=4";
+            HttpGet getJson = new HttpGet(tagApiUrl);
             CloseableHttpResponse response = client.execute(getJson);
             String json = EntityUtils.toString(response.getEntity());
             JSONObject jsonObject = new JSONObject(json);

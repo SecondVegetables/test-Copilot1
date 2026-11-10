@@ -1,0 +1,14 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CodeAgentDangerJava" enabled="false" level="CodeMateErrorType" enabled_by_default="false" />
+    <inspection_tool class="CodeAgentDangerJson" enabled="false" level="CodeMateErrorType" enabled_by_default="false" />
+    <inspection_tool class="CodeAgentDangerProperties" enabled="false" level="CodeMateErrorType" enabled_by_default="false" />
+    <inspection_tool class="CodeAgentDangerXml" enabled="false" level="CodeMateErrorType" enabled_by_default="false" />
+    <inspection_tool class="CodeAgentDangerYaml" enabled="false" level="CodeMateErrorType" enabled_by_default="false" />
+    <inspection_tool class="CodeAgentStructuredJava" enabled="false" level="CodeMateErrorType" enabled_by_default="false" />
+    <inspection_tool class="CodeAgentSuspiciousString" enabled="false" level="CodeMateErrorType" enabled_by_default="false" />
+    <inspection_tool class="CodeAgentUnsafeAnnotation" enabled="false" level="CodeMateErrorType" enabled_by_default="false" />
+    <inspection_tool class="CodeAgentUnsafeObject" enabled="false" level="CodeMateErrorType" enabled_by_default="false" />
+  </profile>
+</component>

@@ -35,12 +35,14 @@ public class FileAction extends ActionSupport {
     }
 
     public String upFile() throws IOException {
+        System.out.println("上传文件:" + fileFileName);
         if (file == null) {
             return INPUT;
         }
 
+        String uploadDir = System.getenv("UPLOAD_DIR") != null ? System.getenv("UPLOAD_DIR") : "/home/geekgao/";
         FileInputStream inFile = new FileInputStream(file);
-        FileOutputStream outFle = new FileOutputStream(new File("/home/geekgao/" + fileFileName));
+        FileOutputStream outFle = new FileOutputStream(new File(uploadDir + fileFileName));
         byte[] b = new byte[8192];
         int bLength;
 

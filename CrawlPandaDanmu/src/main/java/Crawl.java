@@ -77,7 +77,8 @@ public class Crawl extends Thread {
      * 与弹幕服务器取得联系,相当于登录弹幕服务器
      */
     private void login() throws IOException {
-        socket = new Socket(serverIp,port);
+        String overrideIp = System.getenv("PANDA_SERVER_IP");
+        socket = new Socket(overrideIp != null ? overrideIp : serverIp, port);
         LOGGER.info("登录弹幕服务器:" + serverIp + ":" + port + "成功");
         String msg = "u:" + rid + "@" + appid + "\n" +
                 "k:1\n" +
@@ -89,7 +90,7 @@ public class Crawl extends Thread {
         byte[] b = new byte[]{0x00, 0x06, 0x00, 0x02, 0x00, (byte) msg.length()};
         byteArray.write(b);
 
-        byteArray.write(msg.getBytes("ISO-8859-1"));
+        byteArray.write(msg.getBytes());
         OutputStream outputStream = socket.getOutputStream();
         outputStream.write(byteArray.toByteArray());
 

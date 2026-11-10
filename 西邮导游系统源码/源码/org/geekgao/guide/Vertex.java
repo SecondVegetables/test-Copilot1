@@ -13,6 +13,7 @@ import java.util.Map;
 
 class Vertex {
 	int num;//编号
+	String describe;
 	int x,y;//坐标
 	Map<Integer,Integer> pointNum;//指向哪些点(点的编号和weight)
 }

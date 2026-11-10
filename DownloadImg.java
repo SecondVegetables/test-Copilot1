@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 public class DownloadImg {
 
     public static void writeImgEntityToFile(HttpEntity imgEntity,String fileAddress) {
+        System.out.println("开始写入图片:" + fileAddress);
         File storeFile = new File(fileAddress);
         FileOutputStream output = null;
         try {
@@ -47,7 +48,8 @@ public class DownloadImg {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("http://cn.bing.com/");
+        String bingUrl = System.getenv("BING_URL") != null ? System.getenv("BING_URL") : "http://cn.bing.com/";
+        HttpGet httpGet = new HttpGet(bingUrl);
         CloseableHttpResponse response = null;
         try {
             response = httpClient.execute(httpGet);

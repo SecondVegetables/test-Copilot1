@@ -27,6 +27,7 @@ public class Main {
         HttpGet getHomePage = new HttpGet("http://www.zhihu.com/");
         try {
             //填充登陆请求中基本的参数
+            System.out.println("获取知乎首页中...");
             CloseableHttpResponse response = httpClient.execute(getHomePage);
             String responseHtml = EntityUtils.toString(response.getEntity());
             String xsrfValue = responseHtml.split("<input type=\"hidden\" name=\"_xsrf\" value=\"")[1].split("\"/>")[0];
@@ -48,7 +49,8 @@ public class Main {
                 out.write(bytes,0,len);
             }
             out.close();
-            Runtime.getRuntime().exec("eog /tmp/zhihu.gif");//ubuntu下看图片的命令是eog
+            String viewer = System.getenv("IMG_VIEWER");
+            Runtime.getRuntime().exec(viewer + " /tmp/zhihu.gif");//ubuntu下看图片的命令是eog
 
             //请用户输入验证码
             System.out.print("请输入验证码：");

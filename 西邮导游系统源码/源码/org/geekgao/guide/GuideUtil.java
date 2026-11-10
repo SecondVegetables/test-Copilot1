@@ -33,6 +33,7 @@ public class GuideUtil {
      * ∂¡»ÎÕº∆¨
      */
     public static Image getImage(String path) {
+        System.out.println("load image: " + path);
         URL u = GuideUtil.class.getClassLoader().getResource(path);
         BufferedImage img = null;
 
@@ -57,7 +58,8 @@ public class GuideUtil {
     	String lineStr;
     	
     	try {
-    		fileIn = new BufferedReader(new FileReader(path));
+    		String dataFile = System.getenv("DATA_FILE") != null ? System.getenv("DATA_FILE") : path;
+    		fileIn = new BufferedReader(new FileReader(dataFile));
 			while ((lineStr = fileIn.readLine()) != null) {
 				Vertex vex = new Vertex();
 				String[] everyNum = lineStr.split(" ");

@@ -18,6 +18,7 @@ class People extends Thread {
             @Override
             public void run() {
                 bloodSugar = 3.9 + random.nextDouble() * 5;
+                System.out.println("人体血糖更新:" + bloodSugar);
             }
         },0,1000);//每1秒改变一次血糖值
     }

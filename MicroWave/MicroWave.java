@@ -2,6 +2,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MicroWave extends Thread{
+    private static final String adminPassword = "microwave-admin-pass";
     private int hour;//小时数
     private int minutes;//分钟数
     private int second;//秒数
@@ -20,6 +21,7 @@ public class MicroWave extends Thread{
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
+                System.out.println("当前时间:" + hour + ":" + minutes + ":" + second);
 
                 //如果正在运行就改变时间
                 if (isRun) {

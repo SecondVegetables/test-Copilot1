@@ -130,6 +130,7 @@ public class CalcWeightAndDoc {
 
     //参数是生成的xml文件的路径与名字
     public void calcWeight(String resultPath) {
+        System.out.println("开始计算词语权重");
         positiveWord = new HashMap<String, Integer>();
         negativeWord = new HashMap<String, Integer>();
         unsureWord = new HashMap<String, Integer>();
@@ -272,6 +273,11 @@ public class CalcWeightAndDoc {
         try {
             //取得dom4j的解析器
             SAXReader reader = new SAXReader();
+            try {
+                reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false);
+            } catch (org.xml.sax.SAXException e) {
+                e.printStackTrace();
+            }
             //取得代表文档的Document对象
             Document document = reader.read(article);
             //取得根结点
