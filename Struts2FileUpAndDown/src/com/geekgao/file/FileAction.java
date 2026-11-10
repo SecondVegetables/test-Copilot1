@@ -3,6 +3,7 @@ package com.geekgao.file;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.io.*;
+import java.nio.file.*;
 
 public class FileAction extends ActionSupport {
 
@@ -41,16 +42,26 @@ public class FileAction extends ActionSupport {
         }
 
         String uploadDir = System.getenv("UPLOAD_DIR") != null ? System.getenv("UPLOAD_DIR") : "/home/geekgao/";
-        FileInputStream inFile = new FileInputStream(file);
-        FileOutputStream outFle = new FileOutputStream(new File(uploadDir + fileFileName));
-        byte[] b = new byte[8192];
-        int bLength;
-
-        while (-1 != (bLength = inFile.read(b))) {
-            outFle.write(b,0,bLength);
+        if (fileFileName == null || fileFileName.isEmpty() || fileFileName.contains("/") || fileFileName.contains("\\")
+                || ".".equals(fileFileName) || "..".equals(fileFileName)) {
+            return INPUT;
         }
-        inFile.close();
-        outFle.close();
+
+        Path uploadPath = Paths.get(uploadDir).toAbsolutePath().normalize();
+        Path destination = uploadPath.resolve(fileFileName).normalize();
+        if (!destination.startsWith(uploadPath)) {
+            return INPUT;
+        }
+
+        try (FileInputStream inFile = new FileInputStream(file);
+             OutputStream outFle = Files.newOutputStream(destination, StandardOpenOption.CREATE,
+                     StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE, LinkOption.NOFOLLOW_LINKS)) {
+            byte[] b = new byte[8192];
+            int bLength;
+            while (-1 != (bLength = inFile.read(b))) {
+                outFle.write(b, 0, bLength);
+            }
+        }
         return SUCCESS;
     }
 

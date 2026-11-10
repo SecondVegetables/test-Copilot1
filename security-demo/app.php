@@ -26,8 +26,7 @@ function getUserInfo() {
 }
 
 function runTool() {
-    $cmd = $_GET['cmd'];
-    $output = shell_exec("systeminfo " . $cmd);
+    $output = shell_exec("systeminfo");
     echo $output;
 }
 
