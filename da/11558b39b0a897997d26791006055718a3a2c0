@@ -1,0 +1,25 @@
+security-demo/deploy.sh
+  s_6cdebd4d8737ea::t_08dc94dcbffc51 1-26
+security-demo/main.tf
+  s_6cdebd4d8737ea::t_b721a9f6244c0e 1-56
+security-demo/app.php
+  s_6cdebd4d8737ea::t_305ef36fc323d4 1-57
+security-demo/Dockerfile
+  s_6cdebd4d8737ea::t_5c41ae3500ec90 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.6",
+  "base_commit_sha": "da11558b39b0a897997d26791006055718a3a2c0",
+  "prompts": {},
+  "sessions": {
+    "s_6cdebd4d8737ea": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e850e1644ffe7IdadRYQq8rXeQ",
+        "model": "unknown"
+      },
+      "human_author": "xiehangchen 00693116 <xiehangchen@huawei.com>"
+    }
+  }
+}
