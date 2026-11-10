@@ -53,7 +53,13 @@ public class FileAction extends ActionSupport {
             return INPUT;
         }
 
-        try (FileInputStream inFile = new FileInputStream(file);
+        Path tempPath = Paths.get(System.getProperty("java.io.tmpdir")).toRealPath();
+        Path source = file.toPath().toRealPath();
+        if (!source.startsWith(tempPath) || !Files.isRegularFile(source)) {
+            return INPUT;
+        }
+
+        try (InputStream inFile = Files.newInputStream(source, LinkOption.NOFOLLOW_LINKS);
              OutputStream outFle = Files.newOutputStream(destination, StandardOpenOption.CREATE,
                      StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE, LinkOption.NOFOLLOW_LINKS)) {
             byte[] b = new byte[8192];
