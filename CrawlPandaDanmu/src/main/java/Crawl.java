@@ -10,6 +10,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
@@ -90,7 +91,7 @@ public class Crawl extends Thread {
         byte[] b = new byte[]{0x00, 0x06, 0x00, 0x02, 0x00, (byte) msg.length()};
         byteArray.write(b);
 
-        byteArray.write(msg.getBytes());
+        byteArray.write(msg.getBytes(StandardCharsets.ISO_8859_1));
         OutputStream outputStream = socket.getOutputStream();
         outputStream.write(byteArray.toByteArray());
 

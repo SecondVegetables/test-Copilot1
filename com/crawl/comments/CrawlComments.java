@@ -67,6 +67,7 @@ public class CrawlComments implements Runnable {
             setAppXml();
         } catch (Exception e) {
             System.err.println(appId + "号app从" + start + "开始的评论抓取失败:" + e.getMessage());
+            e.printStackTrace(System.err);
             return;
         }
         System.out.println(appId + "号app从" + start + "开始的评论抓取完毕");
